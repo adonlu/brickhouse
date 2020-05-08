@@ -28,25 +28,7 @@ import org.apache.log4j.Logger;
 import java.io.IOException;
 
 
-/**
- * Construct a BloomFilter by aggregating on keys
- * <p/>
- * Uses hadoop util BloomFilter class
- * Use with bloom_contains( key, bloomfile );
- * <p/>
- * insert overwrite local directory bloomfile
- * select bloom( ks_uid )
- * from big_table
- * where premise = true;
- * <p/>
- * add file bloomfile;
- * <p/>
- * select ks_uid
- * from other_big_table
- * where bloom_contains( key, distributed_bloom('bloomfile') );
- *
- * @author jeromebanks
- */
+
 @Description(
         name = "bloom",
         value = " Constructs a BloomFilter by aggregating a set of keys \n " +

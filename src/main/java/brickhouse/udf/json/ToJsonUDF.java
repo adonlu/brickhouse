@@ -58,9 +58,6 @@ import java.util.Map;
 /**
  * Generate a JSON string from an arbitrary Hive structure.
  * Use the struct() method to generate arbitrary JSON maps.
- * <p/>
- * <p>For example,
- * <p/>
  * to_json( struct("name":"Bob",
  * "value",23.0,
  * "color_list",array( "red", "yellow", "green" ),

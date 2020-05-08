@@ -32,20 +32,7 @@ import org.codehaus.jackson.map.ObjectMapper;
 
 import java.io.IOException;
 
-/**
- * Generate an arbitrary Hive structure from a JSON string,
- * and an example template object.
- * <p/>
- * The UDF takes a JSON string as the first argument, and the second argument defines
- * the return type of the UDF, and which fields are parsed from the JSON string.
- * To parse JSON maps with values of varying types, use struct() to create a structure
- * with the desired JSON keys. The template object should be constant.
- * <p/>
- * For example,
- * from_json( " { "name":"Bob","value":23.0,colors["red","yellow","green"],
- * "inner_map":{"a":1,"b":2,"c":3 }" ,
- * struct("name", "","value", 0.0,"colors", array(""), "inner_map", map("",1) );
- */
+
 @Description(name = "from_json",
         value = "_FUNC_(json,template,convert_flag) - Returns an arbitrary Hive Structure given a JSON string, and an example template object."
 )
@@ -128,8 +115,8 @@ public class FromJsonUDF extends GenericUDF {
      * Converts from CamelCase to a string containing
      * underscores.
      *
-     * @param camel
-     * @return
+     * @param camel XXX
+     * @return a string
      */
     static public String FromCamelCase(String camel) {
         StringBuilder sb = new StringBuilder();

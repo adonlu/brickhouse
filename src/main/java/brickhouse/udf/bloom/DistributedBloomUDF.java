@@ -37,21 +37,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-/**
- * UDF to acccess a bloom stored from a file stored in distributed cache
- * <p/>
- * Assumes the file is a tab-separated file of name-value pairs,
- * which has been placed in distributed cache using the "add file" command
- * <p/>
- * Example
- * <p/>
- * INSERT OVERWRITE LOCAL DIRECTORY mybloom select bloom(key) from my_map_table where premise=true;
- * ADD FILE mybloom;
- * <p/>
- * select *
- * from my_big_table
- * where bloom_contains( key, distributed_bloom('mybloom') ) == true;
- */
+
 @Description(
         name = "distribute_bloom",
         value = " Loads a bloomfilter from a file in distributed cache, and makes available as a named bloom. \n " +
@@ -69,8 +55,8 @@ public class DistributedBloomUDF extends GenericUDF {
      * BloomFilters need to be single files right now, containing only one
      * bloom filter
      *
-     * @param mapFilename
-     * @return
+     * @param mapFilename XXX
+     * @return XXX
      * @throws IOException
      */
     static Filter loadBloom(String mapFilename) throws IOException {

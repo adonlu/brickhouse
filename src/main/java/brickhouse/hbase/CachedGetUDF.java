@@ -24,22 +24,7 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.concurrent.Callable;
 
-/**
- * Load data from HBase, and cache locally in memory, for faster access.
- * <p/>
- * Similar to using a distributed map, except the values are stored in HBase,
- * and can be sharded across multiple nodes, so one can process elements which
- * wouldn't fit into memory on a single node.
- * <p/>
- * This may be useful in situations where you would potentially have a cartesian
- * product ( bayesian topic assignment, similiarity clustering ), and would
- * want to avoid an extra join.
- * <p/>
- * One can cache strings, or arbitrary Hive structures, by storing values as
- * JSON strings, and using a template object similiar to the one used in
- * the from_json UDF. An example would be storing a map<string,double> as
- * a bag-of-words, or an array&lt;string&gt; to store a sketch-set
- */
+
 @Description(name = "hbase_cached_get",
         value = "_FUNC_(configMap,key,template) - Returns a cached object, given an HBase config, a key, and a template object used to interpret JSON"
 )

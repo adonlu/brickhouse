@@ -65,14 +65,6 @@
                         </plugin>
                         <plugin>
                             <groupId>org.apache.maven.plugins</groupId>
-                            <artifactId>maven-javadoc-plugin</artifactId>
-                            <version>2.7</version>
-                            <configuration>
-                               <additionalparam>-Xdoclint:none</additionalparam>
-                            </configuration>
-                        </plugin>
-                        <plugin>
-                            <groupId>org.apache.maven.plugins</groupId>
                             <artifactId>maven-surefire-report-plugin</artifactId>
                             <version>2.6</version>
                         </plugin>
@@ -88,8 +80,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
             <plugin>
@@ -103,20 +95,6 @@
                         </manifest>
                     </archive>
                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <configuration>
-                  <additionalparam>-Xdoclint:none</additionalparam>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -147,18 +125,7 @@
         </plugins>
     </build>
 
-    <reporting>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>2.10</version>
-                <configuration>
-                    <configLocation>maven_checks.xml</configLocation>
-                </configuration>
-            </plugin>
-        </plugins>
-    </reporting>
+
 
     <dependencies>
 
@@ -169,7 +136,17 @@
             <optional>true</optional>
             <version>${apache.hive.version}</version>
         </dependency>
-
+        <dependency>
+            <groupId>net.sf.json-lib</groupId>
+            <artifactId>json-lib</artifactId>
+            <version>2.4</version>
+            <classifier>jdk15</classifier>
+        </dependency>
+        <dependency>
+            <groupId>net.ipip</groupId>
+            <artifactId>ipdb</artifactId>
+            <version>1.1.2</version>
+        </dependency>
         <dependency>
             <groupId>org.apache.hive</groupId>
             <artifactId>hive-common</artifactId>

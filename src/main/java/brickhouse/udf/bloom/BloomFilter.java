@@ -64,7 +64,6 @@ import java.util.BitSet;
 
 /**
  * Implements a <i>Bloom filter</i>, as defined by Bloom in 1970.
- * <p/>
  * The Bloom filter is a data structure that was introduced in 1970 and that has been adopted by
  * the networking research community in the past decade thanks to the bandwidth efficiencies that it
  * offers for the transmission of set membership information between networked hosts.  A sender encodes
@@ -73,8 +72,6 @@ import java.util.BitSet;
  * The receiver uses the filter to test whether various elements are members of the set. Though the
  * filter will occasionally return a false positive, it will never return a false negative. When creating
  * the filter, the sender can choose its desired point in a trade-off between the false positive rate and the size.
- * <p/>
- * <p/>
  * Originally created by
  * <a href="http://www.one-lab.org">European Commission One-Lab Project 034819</a>.
  *
